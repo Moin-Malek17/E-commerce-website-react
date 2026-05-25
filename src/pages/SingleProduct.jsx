@@ -4,9 +4,12 @@ import { LuShare } from "react-icons/lu";
 
 import {FaStar} from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCartContext } from "../context/cartContext";
 const SingleProduct = () => {
+  useEffect(()=>{
+    scrollTo(0,0)
+  },[])
   const {id}=useParams()
   const navigate=useNavigate()
   const {products,color}=useDataContext()
@@ -64,7 +67,7 @@ const SingleProduct = () => {
             {
               product?.images?.length >1 && 
               <div className="flex  justify-center w-full  gap-3  h-32.5 aspect-square mt-3">
-                {images?.slice(1).map((img,index)=>(<img key={index} className="h-full shadow cursor-pointer  aspect-square" onClick={()=>swapImg(index+1)} src={img}></img>))}
+                {images?.slice(1,3).map((img,index)=>(<img key={index} className="h-full shadow cursor-pointer  aspect-square" onClick={()=>swapImg(index+1)} src={img}></img>))}
               </div>
             }
           </div>

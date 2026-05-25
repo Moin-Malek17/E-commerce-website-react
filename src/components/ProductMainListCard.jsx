@@ -6,9 +6,9 @@ const ProductMainListCard = ({item}) => {
     const {addToCart}=useCartContext()
     const navigate = useNavigate()
   return (
-    <div className="h-83 rounded-2xl bg-cardBg border border-cardBorder shadow-sm hover-lift transition-all duration-300 overflow-hidden flex flex-col justify-between">
-        <div className="h-[50%] flex cursor-pointer items-center justify-center rounded-t-2xl bg-cardBgImg overflow-hidden group" onClick={()=>navigate(`/product/${item.id}`)}>
-            <img className="h-full w-full object-center object-cover group-hover:scale-105 transition-transform duration-500" src={item.thumbnail} alt={item.title} />
+    <div className="min-h-[330px]  rounded-2xl bg-cardBg border border-cardBorder shadow-sm hover-lift transition-all duration-300 overflow-hidden flex flex-col justify-between">
+        <div className="aspect-5/3  md:aspect-square flex cursor-pointer items-center justify-center rounded-t-2xl bg-cardBgImg overflow-hidden group" onClick={()=>navigate(`/product/${item.id}`)}>
+            <img className="h-full w-full md:aspect-square md:h-auto md:w-auto md:object-cover object-contain group-hover:scale-105 transition-transform duration-500" src={item.thumbnail} alt={item.title} />
         </div>
         <div className="px-3 py-2 flex-1 flex flex-col justify-between">
             <div>
