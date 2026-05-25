@@ -45,15 +45,19 @@ const SingleCartItem = ({cartItem, color}) => {
 
             {/* Actions */}
             <div className="flex flex-row md:flex-col items-center justify-between w-full md:w-auto gap-4 md:gap-2">
-                <div className="flex items-center bg-primaryBg rounded-lg overflow-hidden border border-cardBorder/50 shadow-sm">
+                <div className="flex  items-center  mx-auto bg-primaryBg rounded-lg overflow-hidden border border-cardBorder/50 shadow-sm">
                     <button className="px-3 py-2 hover:bg-cardBorder/50 cursor-pointer transition-colors text-primaryText" onClick={increment}><FaPlus size={12} /></button>
                     <div className="px-3 font-semibold w-8 text-center">{quantity}</div>
                     <button className="px-3 py-2 hover:bg-cardBorder/50 cursor-pointer transition-colors text-primaryText" onClick={decrement}><FaMinus size={12} /></button>
                 </div>
-                <button className="flex bg-red-500/10 hover:bg-red-500 text-red-500 hover:text-white transition-all duration-200 items-center justify-center gap-2 px-4 py-2 rounded-lg cursor-pointer font-medium w-full md:w-auto" onClick={()=>deleteFromCart(cartItem.id)}>
+                {/* <button className="flex bg-red-500/10 hover:bg-red-500 text-red-500 hover:text-white transition-all duration-200 items-center justify-center gap-2 px-4 py-2 rounded-lg cursor-pointer font-medium w-full md:w-auto" onClick={()=>deleteFromCart(cartItem.id)}>
+                    <FaTrash size={14} /> <span>Remove</span>
+                </button> */}
+            </div>
+            <button className="flex bg-red-500/10 hover:bg-red-500 text-red-500 hover:text-white transition-all duration-200 items-center justify-center gap-2 px-4 py-2 rounded-lg cursor-pointer font-medium w-full md:w-auto" onClick={()=>deleteFromCart(cartItem.id)}>
                     <FaTrash size={14} /> <span>Remove</span>
                 </button>
-            </div>
+
         </div>
     );
 }
