@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+* {
+  font-family: "Outfit", sans-serif;
+}
+
+/* navbar */
+.nav-item a {
+  padding-bottom: 6px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-item a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: currentColor;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-item a:hover::after, .nav-item a.active::after {
+  width: 100%;
+}
+
+
+/* home brand hover text */
+.hoverText {
+  position: relative;
+  display: inline-flex;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 auto;
+  color: royalblue;
+  overflow: hidden;
+  background: linear-gradient(to right, #3b82f6 0%, #8b5cf6 50%, #1e3a8a 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 0.4s ease;
+}
+
+.hoverText:hover {
+  background-position: 0 100%;
+}
+
+/* THEME COLORS */
+@theme {
+  --color-primaryBg: var(--primayBg);
+  --color-primaryText: var(--text);
+  --color-cardBg: var(--cardBg);
+  --text-big: var(--text-big);
+  --color-greenish: var(--greenish);
+  --color-category: var(--bgCategory);
+  --color-textdark: var(--textdark);
+  --color-dark: var(--textdark);
+  --text-des: var(--text-dec);
+  --color-red: var(--text-red);
+  --color-cardBgImg: var(--bgImg);
+  --color-cardBorder: var(--cardBorder);
+  --color-text-dec: var(--text-dec);
+}
+
+body {
+  background-color: var(--primayBg);
+  color: var(--text);
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* LIGHT THEME */
+:root {
+  --primayBg: #f8fafc;
+  --text: #0f172a;
+  --card: #ffffff;
+  --text-big: 50px;
+  --greenish: #10b981;
+  --text-dec: #94a3b8;
+  --text-red: #ef4444;
+  --bgCategory: #f1f5f9;
+  --textdark: #0f172a;
+  /* card */
+  --cardBg: #ffffff;
+  --cardBgMain: #ffffff;
+  --bgImg: #f1f5f9;
+  --cardBorder: #e2e8f0;
+}
+
+/* DARK THEME */
+.dark {
+  --primayBg: #020617;
+  --text: #f8fafc;
+  --card: #0f172a;
+  --text-big: 50px;
+  --greenish: #10b981;
+  --text-dec: #64748b;
+  --text-red: #ef4444;
+  --bgCategory: #1e293b;
+  --textdark: #f8fafc;
+  /* card */
+  --cardBg: #0f172a;
+  --cardBgMain: #0f172a;
+  --bgImg: #1e293b;
+  --cardBorder: #334155;
+}
+
+/* Custom Utilities for Aesthetics */
+.glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+  background: rgba(2, 6, 23, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.dark .hover-lift:hover {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.39);
+  transform: translateY(-1px);
+}
