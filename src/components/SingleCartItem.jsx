@@ -23,7 +23,7 @@ const SingleCartItem = ({cartItem, color}) => {
         <div className="w-full h-auto flex flex-col md:flex-row gap-4 justify-between items-center border border-cardBorder shadow-sm rounded-2xl p-4 text-primaryText hover-lift transition-all bg-cardBg">
             {/* Image */}
             <div className="h-32 w-32 shrink-0 bg-primaryBg rounded-xl p-2 flex items-center justify-center">
-                <img className="max-h-full max-w-full object-contain object-center mix-blend-multiply dark:mix-blend-normal" src={cartItem.thumbnail} alt={cartItem.title} />
+                <img className="max-h-full max-w-full object-contain object-center" src={cartItem.thumbnail} alt={cartItem.title} />
             </div>
 
             {/* Content */}
