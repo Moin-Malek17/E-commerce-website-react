@@ -116,6 +116,7 @@ body {
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -146,4 +147,4 @@ body {
 .btn-primary:hover {
   box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.39);
   transform: translateY(-1px);
-}
+}
