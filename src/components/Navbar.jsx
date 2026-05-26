@@ -47,7 +47,7 @@ const Navbar = () => {
                         <NavLink to="/cart" className="flex items-center gap-1 hover:text-greenish transition-colors font-medium">
                             <IoCart className="text-2xl" /> Cart
                         </NavLink>
-                        <div className="cursor-pointer hover:text-greenish font-medium">Login</div>
+                        {/* <div className="cursor-pointer hover:text-greenish font-medium">Login</div> */}
                     </div>
 
                     {/* Mobile Hamburger Button */}
@@ -70,8 +70,8 @@ const Navbar = () => {
                         <NavLink to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium border-b border-cardBorder pb-2">Home</NavLink>
                         <NavLink to="/product" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium border-b border-cardBorder pb-2">Product</NavLink>
                         <NavLink to="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium border-b border-cardBorder pb-2">About</NavLink>
-                        <NavLink to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium border-b border-cardBorder pb-2">Contact</NavLink>
-                        <div className="text-lg font-medium cursor-pointer text-greenish pt-2" onClick={() => setIsMobileMenuOpen(false)}>Login</div>
+                        <NavLink to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium  border-cardBorder ">Contact</NavLink>
+                        {/* <div className="text-lg font-medium cursor-pointer text-greenish pt-2" onClick={() => setIsMobileMenuOpen(false)}>Login</div> */}
                     </div>
                 )}
             </nav>
