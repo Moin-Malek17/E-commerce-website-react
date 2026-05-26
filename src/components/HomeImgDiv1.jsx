@@ -49,14 +49,14 @@ const HomeImgDiv1 = () => {
           <div className="border border-dark/50 rounded-2xl m-2 px-2 h-full flex flex-col hover:rounded-none transition-all duration-75">
             <div className="text-2xl ">{Tshirt?.title}</div>
             <div className="text-lg mb-3"><span>from</span> <span className="text-greenish font-semibold">${Tshirt?.price}</span></div>
-            <div className="uppercase mt-8 md:mt-14 border-b w-fit hover:bg-dark  hover:text-primaryBg px-3 py-1 transition-all duration-75 cursor-pointer" onClick={()=>navigate(`/${Mackbook.id}`)}>Discover now</div>
+            <div className="uppercase mt-8 md:mt-14 border-b-0 lg:border-b  w-fit hover:bg-dark  hover:text-primaryBg px-3 py-1 transition-all duration-75 cursor-pointer" onClick={()=>navigate(`/${Mackbook.id}`)}>Discover now</div>
           </div>
         </div>
-        <div className="bg-dark text-white h-full w-[50%] flex flex-col rounded-2xl" style={mackbookBgStyle}>
-          <div className="border border-white/50 m-2 rounded-2xl px-2 h-full flex flex-col hover:rounded-none transition-all duration-75">
+        <div className="bg-black border border-white/50 lg:border-none text-white h-full w-[50%] flex flex-col rounded-2xl" style={mackbookBgStyle}>
+          <div className="border-0 lg:border lg:border-white/50 m-2 rounded-2xl px-1 h-full flex flex-col hover:rounded-none transition-all duration-75">
             <div className="text-2xl ">{Mackbook?.title}</div>
             <div className="text-lg mb-3"><span>from</span> <span className="text-greenish font-semibold">${Mackbook?.price}</span></div>
-            <div className="uppercase mt-8 md:mt-14 border-b w-fit hover:bg-white  hover:text-dark px-3 py-1 transition-all duration-75 cursor-pointer" onClick={()=>navigate(`/${Tshirt.id}`)}>Discover now</div>
+            <div className="uppercase mt-4  md:mt-14border-b-0 lg:border-b  w-fit hover:bg-white  hover:text-dark px-3 py-1 transition-all duration-75 cursor-pointer" onClick={()=>navigate(`/${Tshirt.id}`)}>Discover now</div>
           </div>
         </div>
       </div>

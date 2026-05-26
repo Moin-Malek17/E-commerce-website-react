@@ -16,6 +16,7 @@ const Cart = () => {
       <div className="bg-primaryBg w-full p-4 h-auto lg:h-[80vh] flex flex-col gap-4 overflow-y-auto rounded-xl border border-cardBorder shadow-sm" style={{msOverflowStyle: 'none',
             scrollbarWidth: 'none'}}>
         <div className="text-2xl font-semibold ">Cart Items</div>
+        
         <div className="flex  flex-col w-full gap-3 bg-primaryBg">
           {cartData.map((cartItem)=>(<SingleCartItem key={cartItem.id} cartItem={cartItem} color={color}/>))
         }

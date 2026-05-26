@@ -23,20 +23,20 @@ const HomeSecDivImgDiv1ImgDiv2 = () => {
           {topCategoryProducts.slice(0, 8).map((item) => (
             <div
               key={item.id}
-              className='snap-start shrink-0 w-28 sm:w-32 rounded-2xl border border-slate-200 bg-white/95 p-2 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md cursor-pointer'
+              className='snap-start shrink-0 w-28 sm:w-32 rounded-2xl border border-cardBorder bg-primaryBg p-2 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md cursor-pointer'
               onClick={() => {
                 navigate(`/category/${item.category}`)
                 window.scrollTo(0, 0)
               }}
             >
-              <div className='mb-2 h-20 overflow-hidden rounded-2xl bg-slate-100 flex items-center justify-center'>
+              <div className='mb-2 h-20 overflow-hidden rounded-2xl bg-cardBgImg flex items-center justify-center'>
                 <img
                   className='h-full w-full object-contain'
                   src={item.thumbnail}
                   alt={item.title}
                 />
               </div>
-              <p className='text-[11px] font-medium text-slate-900 text-center'>
+              <p className='text-[11px] font-medium text-dark text-center'>
                 {item.title.length > 10 ? `${item.title.substring(0, 10)}...` : item.title}
               </p>
             </div>

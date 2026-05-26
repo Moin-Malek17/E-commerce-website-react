@@ -1,17 +1,20 @@
 import { useEffect } from "react"
 import ContactImg from "../assets/contact.png.png"
+import { useNavigate } from "react-router"
 
 const Contact = () => {
+  const navigate = useNavigate()
   useEffect(()=>{
       scrollTo(0,0)
     },[])
+
   return (
     <div className="w-full">
-      <div><span>Home</span><span>Contact</span></div>
+      <div className="flex items-center px-6 py-1"><span className="me-2 cursor-pointer text-dark/80"  onClick={()=>navigate(`${'/'}`)}>Home</span><div className="me-2">&gt;</div><span>Contact</span></div>
       {/* left right */}
-      <div className="w-full flex p-4 text-dark">
+      <div className="w-full flex flex-col lg:flex-row  p-4 text-dark ">
         {/* left */}
-        <div className="w-[50%] bg-primaryBg p-4">
+        <div className="w-full lg:w-[50%] bg-primaryBg p-4 ">
           <div className="font-semibold text-2xl mt-3 mb-6">Ready to work with us</div>
           <div className="my-3 text-dark/70">Contact us for all your questions and opinions</div>
           <div className="w-full flex justify-between mb-3">
@@ -56,7 +59,7 @@ const Contact = () => {
           </div>
         </div>
         {/* right */}
-        <div className="w-[50%] bg-primaryBg p-4">
+        <div className="w-full lg:w-[50%]  bg-primaryBg p-4">
           <div className="font-semibold text-2xl mt-3 mb-6">United state (head quater)</div>
           <div className="my-3 text-dark/70">152 Thatcher Road St, Mahattan, 10463, US (+025) 3886 25 16</div>
           <div className="text-greenish mb-6">hello@swattechmart.com</div>
