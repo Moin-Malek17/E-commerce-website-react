@@ -65,7 +65,9 @@ const Navbar = () => {
                         </div>
                         <NavLink to="/cart" className="relative flex items-center gap-1 hover:text-greenish">
                             <IoCart className="text-2xl" />
-                            {/* <div className="absolute size-4 bg-amber-300 top-0 right-0">1</div> */}
+                            {
+                                    cartData?.length > 0 ? <div className="absolute -top-1.5 -right-1 text-white text-sm   size-4.5 bg-greenish rounded-full flex items-center justify-center ">{cartData?.length}</div> : null
+                            }
                         </NavLink>
                         <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-3xl text-primaryText focus:outline-none">
                             {isMobileMenuOpen ? <IoClose /> : <IoMenu />}
