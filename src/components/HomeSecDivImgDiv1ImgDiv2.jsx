@@ -23,7 +23,7 @@ const HomeSecDivImgDiv1ImgDiv2 = () => {
           {topCategoryProducts.slice(0, 8).map((item) => (
             <div
               key={item.id}
-              className='snap-start shrink-0 w-28 sm:w-32 rounded-2xl border border-cardBorder bg-primaryBg p-2 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md cursor-pointer'
+              className='snap-start shrink-0 w-28 sm:w-32 rounded-2xl border border-cardBorder bg-primaryBg p-2 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md cursor-pointer  '
               onClick={() => {
                 navigate(`/category/${item.category}`)
                 window.scrollTo(0, 0)

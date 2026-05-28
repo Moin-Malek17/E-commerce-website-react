@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router";
 import Logo from '../assets/logo.png.png';
 import { useDataContext } from "../context/dataContex";
+import { useCartContext } from "../context/cartContext";
 import { IoCart, IoMenu, IoClose } from "react-icons/io5";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { FcLike } from "react-icons/fc";
@@ -9,6 +10,7 @@ import CategoryNav from "./CategoryNav";
 
 const Navbar = () => {
     const { color, handlerTheme, theme } = useDataContext();
+    const {cartData} =  useCartContext()
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     return (
@@ -45,7 +47,13 @@ const Navbar = () => {
                             {theme === "dark" ? <MdLightMode /> : <MdDarkMode />}
                         </div>
                         <NavLink to="/cart" className="flex items-center gap-1 hover:text-greenish transition-colors font-medium">
-                            <IoCart className="text-2xl" /> Cart
+                            <div className="flex items-center justify-center gap-2 relative"> 
+                                <IoCart className="text-2xl" />
+                                {
+                                    cartData?.length > 0 ? <div className="absolute -top-1.5 -right-1 text-white text-sm   size-4 bg-greenish rounded-full flex items-center justify-center ">{cartData?.length}</div> : null
+                                }
+                            </div>
+                            Cart
                         </NavLink>
                         {/* <div className="cursor-pointer hover:text-greenish font-medium">Login</div> */}
                     </div>
@@ -55,8 +63,9 @@ const Navbar = () => {
                         <div onClick={() => handlerTheme()} className="cursor-pointer text-xl">
                             {theme === "dark" ? <MdLightMode /> : <MdDarkMode />}
                         </div>
-                        <NavLink to="/cart" className="flex items-center gap-1 hover:text-greenish">
+                        <NavLink to="/cart" className="relative flex items-center gap-1 hover:text-greenish">
                             <IoCart className="text-2xl" />
+                            {/* <div className="absolute size-4 bg-amber-300 top-0 right-0">1</div> */}
                         </NavLink>
                         <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-3xl text-primaryText focus:outline-none">
                             {isMobileMenuOpen ? <IoClose /> : <IoMenu />}
